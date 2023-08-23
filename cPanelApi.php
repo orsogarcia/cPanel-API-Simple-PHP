@@ -303,6 +303,13 @@ class cPanelApi {
     return $this->exe_cpanel($func);
     
     }
+
+    public function deleteForwarder($usermail, $emailfwd) {
+
+        $func = "https://$this->cPanelUrl:$this->cPanelPort/execute/Email/delete_forwarder?domain=$this->cPanelUrl&address=$usermail%40$this->cPanelUrl&forwarder=$emailfwd";
+    return $this->exe_cpanel($func);
+
+    }
     
     public function suspendEmail($email) {
 
